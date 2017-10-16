@@ -26,6 +26,13 @@
     </developerConnection>
     <url>https://github.com/BjoernPetersen/JMusicBot-MediaKeys</url>
   </scm>
+  <repositories>
+    <repository>
+      <id>data-local</id>
+      <name>data</name>
+      <url>file://${project.basedir}/repo</url>
+    </repository>
+  </repositories>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -54,6 +61,12 @@
       <groupId>com.melloware</groupId>
       <artifactId>jintellitype</artifactId>
       <version>${jintellitype.version}</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>jxgrabkey</groupId>
+      <artifactId>jxgrabkey</artifactId>
+      <version>0.3.2</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
