@@ -58,15 +58,9 @@
     </dependency>
 
     <dependency>
-      <groupId>com.melloware</groupId>
-      <artifactId>jintellitype</artifactId>
-      <version>${jintellitype.version}</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>jxgrabkey</groupId>
-      <artifactId>jxgrabkey</artifactId>
-      <version>0.3.2</version>
+      <groupId>com.github.tulskiy</groupId>
+      <artifactId>jkeymaster</artifactId>
+      <version>1.2</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
