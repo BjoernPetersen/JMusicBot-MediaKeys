@@ -5,7 +5,8 @@ import com.github.bjoernpetersen.jmusicbot.config.Config
 import com.github.bjoernpetersen.jmusicbot.config.Config.Entry
 import com.github.bjoernpetersen.jmusicbot.platform.Platform
 import com.github.bjoernpetersen.jmusicbot.platform.Support
-import com.github.bjoernpetersen.jmusicbot.playback.PlayerState
+import com.github.bjoernpetersen.jmusicbot.playback.PauseState
+import com.github.bjoernpetersen.jmusicbot.playback.PlayState
 import com.github.zafarkhaja.semver.Version
 import com.tulskiy.keymaster.common.MediaKey
 import com.tulskiy.keymaster.common.Provider
@@ -25,7 +26,7 @@ class MediaKeyPlugin : AdminPlugin, Loggable {
   }
 
   override fun getMinSupportedVersion(): Version {
-    return Version.forIntegers(0, 11, 0)
+    return Version.forIntegers(0, 14, 0)
   }
 
   override fun initializeConfigEntries(config: Config): List<Entry> = emptyList()
@@ -40,10 +41,9 @@ class MediaKeyPlugin : AdminPlugin, Loggable {
     provider = Provider.getCurrentProvider(false).apply {
       register(MediaKey.MEDIA_NEXT_TRACK, { player.next() })
       register(MediaKey.MEDIA_PLAY_PAUSE, {
-        when (player.state.state) {
-          PlayerState.State.PLAY -> player.pause()
-          PlayerState.State.PAUSE -> player.play()
-          else -> Unit
+        when (player.state) {
+          is PlayState -> player.pause()
+          is PauseState -> player.play()
         }
       })
     }

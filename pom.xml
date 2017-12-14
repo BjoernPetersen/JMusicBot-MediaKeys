@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.bjoernpetersen</groupId>
   <artifactId>musicbot-mediakeys</artifactId>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
   <url>https://github.com/BjoernPetersen/JMusicBot-MediaKeys</url>
   <name>${project.groupId}:${project.artifactId}</name>
   <licenses>
@@ -38,9 +38,9 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <java.version>1.8</java.version>
-    <kotlin.version>1.1.51</kotlin.version>
+    <kotlin.version>1.2.0</kotlin.version>
     <junit.version>4.12</junit.version>
-    <musicbot.version>0.11.0</musicbot.version>
+    <musicbot.version>0.14.3</musicbot.version>
     <jintellitype.version>1.3.9</jintellitype.version>
   </properties>
   <dependencies>
